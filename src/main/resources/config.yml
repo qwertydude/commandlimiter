@@ -1,0 +1,36 @@
+# CommandLimiter configuration
+#
+# Players without bypass permission cannot see these commands in tab
+# completion and get the blocked-message when they try to run them.
+#
+# Bypass permissions (grant with LuckPerms):
+#   commandlimiter.bypass            - bypass everything (ops have this by default)
+#   commandlimiter.bypass.<command>  - bypass one command, e.g. commandlimiter.bypass.tp
+#
+# Example:
+#   /lp user Steve permission set commandlimiter.bypass.tp true
+#   /lp group mod permission set commandlimiter.bypass true
+
+# Base command names, without the leading slash. Namespaced forms
+# (/minecraft:tp) are blocked automatically.
+blocked-commands:
+- tp
+- teleport
+- gamemode
+- give
+- op
+- deop
+- stop
+- reload
+- plugins
+- pl
+- version
+- ver
+- about
+- seed
+
+# Also hide/block every registered alias of each blocked command.
+block-aliases: true
+
+# Sent when a player runs a blocked command. Supports & color codes.
+blocked-message: "&cYou cannot use this command."

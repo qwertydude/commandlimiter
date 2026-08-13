@@ -1,0 +1,23 @@
+name: CommandLimiter
+version: '${project.version}'
+main: io.github.qwertydude.commandlimiter.CommandLimiter
+api-version: '1.21'
+description: Hides restricted commands from tab completion and blocks players from using them.
+author: qwertydude
+website: https://github.com/qwertydude/commandlimiter
+softdepend: [LuckPerms]
+
+commands:
+  commandlimiter:
+    description: Manage CommandLimiter.
+    usage: "/<command> <reload|list|add <command>|remove <command>>"
+    aliases: [cmdlimiter, climit]
+    permission: commandlimiter.admin
+
+permissions:
+  commandlimiter.admin:
+    description: Allows managing CommandLimiter.
+    default: op
+  commandlimiter.bypass:
+    description: Bypass all CommandLimiter restrictions (see and use every blocked command). Per-command bypass is commandlimiter.bypass.<command>.
+    default: op
